@@ -4,11 +4,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --grotesk-font: 'Hanken Grotesk', sans-serif;
+}
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  font-family: var(--grotesk-font);
 }
 
 main {
