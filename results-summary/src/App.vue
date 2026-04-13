@@ -23,10 +23,12 @@ import './style.css'
 
       <div class="card-two">
         <p>Summary</p>
-        <div v-for="data in content" :key="data.category" class="card-list">
-          <h3>{{ data.category }}</h3>
-          <span>{{ data.score }}</span>
-          <img :src="data.icon" alt="">
+        <div v-for="data in content" :key="data.category" class="card-list" :class="data.category.toLocaleLowerCase()">
+          <div class="left">
+            <img :src="data.icon" alt="">
+            <h3>{{ data.category }}</h3>
+          </div>
+          <span>{{ data.score }} / 100</span>
         </div>
       </div>
     </div>
@@ -92,5 +94,47 @@ import './style.css'
 .card-one p {
   width: 14rem;
   color: hsl(221, 100%, 96%);
+}
+
+.card-two {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 20rem;
+  height: 23rem;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
+.card-two p {
+  align-self: flex-start;
+}
+
+.card-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+}
+
+.left {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.left h3 {
+  font-size: 1rem;
+}
+
+.reaction {
+  background-color: hsl(0, 100%, 97%);
+  border-radius: 1rem;
+}
+
+.reaction h3 {
+  color: hsl(0, 100%, 67%);
 }
 </style>
