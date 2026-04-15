@@ -30,7 +30,7 @@ import './style.css'
           </div>
           <span><span class="span-two">{{ data.score }}</span> / 100</span>
         </div>
-        <button>
+        <button type="button">
           Continue
         </button>
       </div>
