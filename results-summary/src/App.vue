@@ -28,8 +28,11 @@ import './style.css'
             <img :src="data.icon" alt="">
             <h3>{{ data.category }}</h3>
           </div>
-          <span>{{ data.score }} / 100</span>
+          <span><span class="span-two">{{ data.score }}</span> / 100</span>
         </div>
+        <button>
+          Continue
+        </button>
       </div>
     </div>
   </main>
@@ -45,15 +48,17 @@ import './style.css'
   align-items: center;
   flex-direction: column;
   width: 18rem;
-  height: 23rem;
+  height: 26rem;
   text-align: center;
   gap: 3rem;
   background: linear-gradient(to bottom,
       hsl(252, 100%, 67%),
       hsl(241, 81%, 54%));
-  padding: 2rem;
+  padding: 2.5rem;
   color: white;
   border-radius: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .score-wrapper {
@@ -101,15 +106,23 @@ import './style.css'
   align-items: center;
   flex-direction: column;
   width: 20rem;
-  height: 23rem;
+  height: 26rem;
   text-align: center;
   gap: 1rem;
-  padding: 2rem;
-  border-radius: 2rem;
+  padding: 2.5rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  margin-left: -30px;
 }
 
 .card-two p {
   align-self: flex-start;
+  font-weight: 600;
+  color: hsl(224, 30%, 27%);
+  font-size: 1.2rem;
 }
 
 .card-list {
@@ -125,16 +138,71 @@ import './style.css'
   gap: 0.5rem;
 }
 
+.span-two {
+  color: black;
+  font-weight: 600;
+}
+
+.card-list {
+  color: hsl(228.74deg 7.36% 48.41%);
+}
+
 .left h3 {
   font-size: 1rem;
 }
 
+.reaction,
+.memory,
+.verbal,
+.visual {
+  border-radius: 1rem;
+}
+
 .reaction {
   background-color: hsl(0, 100%, 97%);
-  border-radius: 1rem;
 }
 
 .reaction h3 {
   color: hsl(0, 100%, 67%);
+}
+
+.memory {
+  background-color: hsl(39, 100%, 97%);
+}
+
+.memory h3 {
+  color: hsl(39, 100%, 56%);
+}
+
+.verbal {
+  background-color: hsl(166, 100%, 97%);
+}
+
+.verbal h3 {
+  color: hsl(166, 100%, 37%);
+}
+
+.visual {
+  background-color: hsl(234, 85%, 97%);
+}
+
+.visual h3 {
+  color: hsl(234, 85%, 45%);
+}
+
+button {
+  padding: 1rem 5rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: hsl(224, 30%, 27%);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: linear-gradient(to bottom,
+      hsl(252, 100%, 67%),
+      hsl(241, 81%, 54%));
 }
 </style>

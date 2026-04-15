@@ -14,6 +14,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   font-family: var(--grotesk-font);
+  background-color: hsl(241, 100%, 89%);
 }
 
 main {
@@ -21,4 +22,5 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 }
