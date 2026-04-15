@@ -7,10 +7,10 @@ import './style.css'
   <main>
     <div class="container">
       <div class="card-one">
-        <p>Your Result</p>
+        <h1>Your Result</h1>
         <div class="score-wrapper">
           <div class="circle"></div>
-          <h1>76</h1>
+          <h2>76</h2>
           <span class="card-one-span">of 100</span>
         </div>
         <div class="card-one-text">
@@ -22,7 +22,7 @@ import './style.css'
       </div>
 
       <div class="card-two">
-        <p>Summary</p>
+        <h1>Summary</h1>
         <div v-for="data in content" :key="data.category" class="card-list" :class="data.category.toLocaleLowerCase()">
           <div class="left">
             <img :src="data.icon" alt="">
@@ -43,14 +43,20 @@ import './style.css'
   display: flex;
 }
 
+.card-one,
+.card-two {
+  width: 100%;
+  max-width: 25rem;
+  height: auto;
+  box-shadow: 0 25px 25px 0 hsla(0, 0%, 0%, 0.1);
+}
+
 .card-one {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 18rem;
-  height: 26rem;
   text-align: center;
-  gap: 3rem;
+  gap: 5rem;
   background: linear-gradient(to bottom,
       hsl(252, 100%, 67%),
       hsl(241, 81%, 54%));
@@ -67,17 +73,18 @@ import './style.css'
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: -1rem;
 }
 
-.score-wrapper h1 {
-  font-size: 3rem;
+.score-wrapper>h2 {
+  font-size: 5rem;
   z-index: 1;
 }
 
 .circle {
   position: absolute;
-  width: 135px;
-  height: 135px;
+  width: 182px;
+  height: 182px;
   border-radius: 50%;
   background: linear-gradient(to bottom,
       hsla(256, 72%, 46%, 1),
@@ -96,20 +103,22 @@ import './style.css'
 }
 
 .card-one-text p,
-.card-one p {
+.card-one h1 {
   width: 14rem;
   color: hsl(221, 100%, 96%);
+}
+
+.card-one h1 {
+  font-size: 1.2rem;
 }
 
 .card-two {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 20rem;
-  height: 26rem;
   text-align: center;
-  gap: 1rem;
-  padding: 2.5rem;
+  gap: 1.5rem;
+  padding: 2.5rem 3rem;
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
   background-color: white;
@@ -118,7 +127,7 @@ import './style.css'
   margin-left: -30px;
 }
 
-.card-two p {
+.card-two h1 {
   align-self: flex-start;
   font-weight: 600;
   color: hsl(224, 30%, 27%);
@@ -130,7 +139,7 @@ import './style.css'
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 1.2rem;
 }
 
 .left {
@@ -145,6 +154,7 @@ import './style.css'
 
 .card-list {
   color: hsl(228.74deg 7.36% 48.41%);
+  width: 16rem;
 }
 
 .left h3 {
@@ -198,11 +208,34 @@ button {
   color: white;
   cursor: pointer;
   font-weight: 600;
+  margin-top: 1rem;
+  width: 16rem;
 }
 
 button:hover {
   background: linear-gradient(to bottom,
       hsl(252, 100%, 67%),
       hsl(241, 81%, 54%));
+}
+
+@media (max-width: 43rem) {
+  .container {
+    flex-direction: column;
+  }
+
+  .card-one {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    z-index: 2;
+    margin-bottom: -30px;
+    box-shadow: 0 25px 25px 0 hsla(0, 0%, 0%, 0.1);
+  }
+
+  .card-two {
+    border-radius: 0;
+    z-index: 1;
+    margin-left: 0;
+    box-shadow: none;
+  }
 }
 </style>
